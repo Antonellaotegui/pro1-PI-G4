@@ -7,7 +7,7 @@ body{
 .barra{
     background-color: black;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     height: 60px;
 } 
@@ -18,3 +18,8 @@ a {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     }
+.logo{
+    height: 60px;
+    border-radius: 80px;
+  
+}
