@@ -37,22 +37,21 @@ a {
     height: 400px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
 }
 .cajas{
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.521);
     width:18%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     border-radius: 10px;
-    height: 400px;
-    flex-direction: column;
 }
 .categoria{
     font-family: 'Montserrat', sans-serif;
     color: white;
     font-size: 30px;
+    
 }
 .pelis{
     height: 250px;
