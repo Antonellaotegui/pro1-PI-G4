@@ -35,6 +35,9 @@ a {
 .pepopulares{
     width: 100%;
     height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .cajas{
     padding: 10px;
@@ -48,6 +51,7 @@ a {
     font-family: 'Montserrat', sans-serif;
     color: white;
     font-size: 30px;
+    
 }
 .pelis{
     height: 250px;
