@@ -2,7 +2,7 @@ body{
     background: #7b4397;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, hsl(356, 72%, 50%), #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin: none;
+    margin: 0px;
     
 }
 
@@ -11,6 +11,7 @@ header{
     display: flex;
     justify-content: center;
     height: 100px;
+    width: 100%;
 
 } 
 a {
@@ -22,14 +23,14 @@ a {
     }
 
 .barra {
-    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .logo{
     height: 90px;
-    border-radius: 80px;
+    border-radius: 100px;
    
 }
 .pepopulares{
@@ -51,6 +52,7 @@ a {
     font-family: 'Montserrat', sans-serif;
     color: white;
     font-size: 30px;
+    margin: 27px;
     
 }
 .pelis{
@@ -68,7 +70,7 @@ p{
     font-size: 10px;
     margin: none;
 }
-.sepopulares{
+.populares{
     height: 400px;
     display: flex;
     flex-direction: row;
