@@ -56,7 +56,7 @@ a {
     
 }
 .pelis{
-    height: 250px;
+    height: 270px;
 }
 p{
     color: white;
@@ -64,7 +64,9 @@ p{
     text-align: center;
 }
 .titulo{
-    font-size: 15px;
+    font-size: 16px;
+   font-weight: bolder;
+
 }
 .estreno{
     font-size: 10px;
