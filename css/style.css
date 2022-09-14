@@ -87,3 +87,27 @@ footer{
     height: 120px;
     width: 100%;
     }
+.generos{
+       
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin: auto;
+        }
+.titulos {
+        color: white;
+        font-size: 40px;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: double;
+    }
+.listaGenero{
+    font-size: 25px;
+    color: white;
+}
+/*NO agregar codigo debajo del media queri
+@media  (max-width : 768px) {
+    
+}*/
