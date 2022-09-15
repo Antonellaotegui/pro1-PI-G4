@@ -142,6 +142,42 @@ a{
     color: white;
     text-decoration: none;
 }
+.detail{
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.info {
+    background-color: rgba(0, 0, 0, 0.521);
+    border-radius: 10px;
+    margin-right: 40px;
+}
+.imgDetail {
+    margin: 40px;
+}
+.infoDetail {
+    background-color: rgba(0, 0, 0, 0.521);
+    border-radius: 10px;
+    justify-content: space-around;
+    padding: 40px;
+    color: white;
+}
+.tituloDetail{
+    font-weight:bolder;
+    text-align: center;
+    font-size: 30px;
+}
+.rating{
+    margin-left: 125px;
+    width: 50%;
+
+}
+
+
 /*NO agregar codigo debajo del media queri
 @media  (max-width : 768px) {
     
