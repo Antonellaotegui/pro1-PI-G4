@@ -113,6 +113,8 @@ footer{
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
+    background-color: black;
+    margin: 10px;
     
 
 }
@@ -135,6 +137,10 @@ h4{
     color: white;
     margin-left: 20px;
 
+}
+a{
+    color: white;
+    text-decoration: none;
 }
 /*NO agregar codigo debajo del media queri
 @media  (max-width : 768px) {
