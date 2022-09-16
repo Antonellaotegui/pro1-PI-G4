@@ -3,6 +3,7 @@ body{
     background: -webkit-linear-gradient(to right, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, hsl(356, 72%, 50%), #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 0px;
+
     
 }
 
@@ -21,13 +22,23 @@ header{
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     }
-
+.barra li{
+    list-style-type: none;
+    display: inline;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .barra {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
+
 .logo{
     height: 90px;
     border-radius: 100px;
@@ -210,6 +221,10 @@ a{
         width: 100%;
         flex-direction: column;
     }
+    body{
+        width: 100vw;
+
+    }
 
     header {
         background-color: black;
@@ -263,7 +278,6 @@ a{
         margin-top: 300px;
     }
     .detail{
-        display: flex;
         justify-content: left;
         align-items: left;
         width: 100%;
@@ -272,6 +286,7 @@ a{
        flex-direction: column;
        padding-left: 2%;
        padding-right: 2%;
+
     }
 
 }
