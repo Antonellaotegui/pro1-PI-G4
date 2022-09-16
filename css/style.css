@@ -91,6 +91,7 @@ footer{
     font-size: 13px;
     height: 120px;
     width: 100%;
+    margin-bottom: 0px;
     }
 .generos{
        
@@ -187,8 +188,69 @@ a{
     width: 60%;
     border-radius: 10px;
 }
+.genMain{
+    height: 36vw;
+}
 
-/*NO agregar codigo debajo del media queri
-@media  (max-width : 768px) {
-    
-}*/
+/*NO agregar codigo debajo del media queri*/
+@media  (max-width : 420px) {
+    .barra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    header {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        width: 100%;
+    }
+
+    .barra a {
+        margin-left: 0;
+        color: white;
+        margin: 5px 0px;
+        font-size: 17px;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+    }
+
+    form {
+        margin-left: 0;
+    }
+
+    .populares {
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .populares {
+        height: auto;
+    }
+
+    .cajas {
+        margin: 5px 0px;
+    }
+
+    .genMain{
+        height: 50 vw;
+    }
+    .footergenero {
+        height: 230px;
+    }
+    footer {
+        height: 230px;
+        
+    }
+    .footerg {
+        margin-top: 300px;
+    }
+}
