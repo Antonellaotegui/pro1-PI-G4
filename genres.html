@@ -11,22 +11,30 @@
 <body>
     <header>
         <nav class="barra"> <img class="logo" src="./img/nuevoLogo.png" alt="logo"><a href="./index.html">HOME</a> <a href="./favorite.html">FAVORITOS</a> <a href="./genres.html">GÉNEROS</a> 
-           <a href=""> <form method="post" target="_blank">
+           <form method="get" action="./resultados.html" target="_blank">
             <input type="search" name="busquedor" placeholder="Buscar">
             <input type="submit" value="Buscar">
-        </form> </a> </nav>
+        </form> </nav>
     </header>
     <main>
       <!--Es la página a donde el usuario podrá ver los listados de géneros disponibles en nuestro sitio web, tanto para películas como para series. Deberá haber un listado de géneros de películas y otro de series. Al hacer click en un género el sitio deberá mostrar el detalle de ese género.-->  
-       <h1 class="titulos">Generos</h1>
-       <h3>Encontra las mejores peliculas y series, con una gran variedad de generos para toda la familia</h3>
-       <ul class="listaGenero">
-        <li> <a href="./comedia.html">Comedias</a></li>
-        <li> <a href="./familiar.html">Familiares</a></li>
-        <li> <a href="./accion.html">Accion</a> </li>
-        <li><a href="./drama.html">Dramas</a></li>
-       </ul>
-
+       <h1 class="titulos">Géneros</h1>
+       <h3 class="descubri">Encontra las mejores peliculas y series, con una gran variedad de generos para toda la familia</h3>
+       <h4>PELÍCULAS</h4>
+       <section class="listaGenero">
+        <article class="generoLi"> <a href="./detail-genres.html">Comedias</a></article>
+        <article class="generoLi"> <a href="./detail-genres.html">Familiares</a></article>
+        <article class="generoLi"> <a href="./detail-genres.html">Accion</a> </article>
+        <article class="generoLi"><a href="./detail-genres.html">Dramas</a></article>
+       </section>
+      
+       <h4>SERIES</h4>
+       <section class="listaGenero">
+        <article class="generoLi"> <a href="./detail-genres.html">Comedias</a></article>
+        <article class="generoLi"> <a href="./detail-genres.html">Familiares</a></article>
+        <article class="generoLi"> <a href="./detail-genres.html">Accion</a> </article>
+        <article class="generoLi"><a href="./detail-genres.html">Dramas</a></article>
+        </section>
     </main>
     <footer>
         <p>Este sitio web fue creado por Justina Alric Ferré, Ariana Souza y Antonella Otegui</p>
