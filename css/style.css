@@ -191,9 +191,18 @@ a{
 .genMain{
     height: 36vw;
 }
+.resultado{
+    color: white;
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 60px;
+    margin-bottom: auto;
+   text-align: center;
+}
 
 /*NO agregar codigo debajo del media queri*/
 @media  (max-width : 420px) {
+   
     .barra {
         display: flex;
         justify-content: center;
@@ -253,4 +262,16 @@ a{
     .footerg {
         margin-top: 300px;
     }
+    .detail{
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        width: 100%;
+        height: auto;
+       flex-wrap: wrap;
+       flex-direction: column;
+       padding-left: 2%;
+       padding-right: 2%;
+    }
+
 }
