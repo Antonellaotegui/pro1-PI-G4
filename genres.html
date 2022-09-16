@@ -10,11 +10,16 @@
 </head>
 <body>
     <header>
-        <nav class="barra"> <img class="logo" src="./img/nuevoLogo.png" alt="logo"><a href="./index.html">HOME</a> <a href="./favorite.html">FAVORITOS</a> <a href="./genres.html">GÉNEROS</a> 
-           <form method="get" action="./resultados.html" target="_blank">
-            <input type="search" name="busquedor" placeholder="Buscar">
-            <input type="submit" value="Buscar">
-        </form> </nav>
+        <nav class="barra"> 
+            <ul>
+                <li><img class="logo" src="./img/nuevoLogo.png" alt="logo"></li>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./favorite.html">FAVORITOS</a></li>
+                <li><a href="./genres.html">GÉNEROS</a></li>
+                <li><form method="get" action="./resultados.html" target="_blank">
+                    <input type="search" name="busquedor" placeholder="Buscar">
+                    <input type="submit" value="Buscar"></form> </li>
+       </ul></nav>
     </header>
     <main class="genMain">
       <!--Es la página a donde el usuario podrá ver los listados de géneros disponibles en nuestro sitio web, tanto para películas como para series. Deberá haber un listado de géneros de películas y otro de series. Al hacer click en un género el sitio deberá mostrar el detalle de ese género.-->  
