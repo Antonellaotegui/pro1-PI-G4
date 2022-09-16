@@ -172,11 +172,15 @@ a{
     font-size: 30px;
 }
 .rating{
-    margin-left: 125px;
+    margin-left: 105px;
     width: 50%;
-
 }
-
+.añadirFav{
+    margin-left: 80px;
+    margin-top: 50px;
+    width: 60%;
+    border-radius: 10px;
+}
 
 /*NO agregar codigo debajo del media queri
 @media  (max-width : 768px) {
