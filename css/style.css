@@ -1,3 +1,5 @@
+/* ESTILO GENERAL PARA TODOS NUESTROS HTML */
+
 body {
     background: #7b4397;
     /* fallback for old browsers */
@@ -6,8 +8,6 @@ body {
     background: linear-gradient(to right, hsl(356, 72%, 50%), #7b4397);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 0px;
-
-
 }
 
 header {
@@ -49,12 +49,28 @@ ul {
 .logo {
     height: 90px;
     border-radius: 100px;
-
 }
 
 form {
     margin-left: 70px;
 }
+p {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+footer {
+    background-color: black;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+/* ESTILO DEL INDEX.HTML Y FAVORITE.HTML */
 
 .pepopulares {
     height: 400px;
@@ -79,18 +95,11 @@ form {
     color: white;
     font-size: 30px;
     margin: 27px;
-
 }
 
 .pelis {
     height: 270px;
     width: 100%;
-}
-
-p {
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
 }
 
 .titulo {
@@ -111,17 +120,7 @@ p {
     justify-content: space-around;
 }
 
-footer {
-    background-color: black;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    font-size: 13px;
-    height: 120px;
-    width: 100%;
-    margin-bottom: 0px;
-}
-
+/* ESTILO DEL GENRES.HTML */
 .generos {
 
     display: flex;
@@ -148,8 +147,6 @@ footer {
     padding: 10px;
     background-color: black;
     margin: 10px;
-
-
 }
 
 .generoLi {
@@ -157,8 +154,6 @@ footer {
     font-size: 17px;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-
-
 }
 
 h4 {
@@ -174,12 +169,12 @@ h4 {
     margin-left: 20px;
 
 }
-
 a {
     color: white;
     text-decoration: none;
 }
 
+/* ESTILO DEL DETAIL-MOVIE.HTML Y DETAIL-SERIE.HTML (EN PARTE DE RESULTADOS.HTML)*/
 .detail {
     padding-left: 200px;
     padding-right: 200px;
@@ -235,6 +230,7 @@ a {
     height: 36vw;
 }
 
+/* ESTILO DEL RESULTADOS.HTML */
 .resultado {
     color: white;
     font-size: 60px;
@@ -244,7 +240,8 @@ a {
     text-align: center;
 }
 
-/*NO agregar codigo debajo del media queri*/
+/*MEDIA QUERIES --> PARA CELULAR IPHONE 12 PRO*/
+
 @media (max-width : 420px) {
 
     .barra ul {
