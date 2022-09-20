@@ -36,6 +36,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .barra {
@@ -44,6 +45,8 @@ ul {
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
+
 }
 
 .logo {
@@ -68,6 +71,7 @@ footer {
     height: 120px;
     width: 100%;
     margin-bottom: 0px;
+    flex-wrap: wrap;
 }
 
 /* ESTILO DEL INDEX.HTML Y FAVORITE.HTML */
@@ -77,6 +81,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .cajas {
@@ -87,7 +92,7 @@ footer {
     justify-content: space-evenly;
     border-radius: 10px;
     flex-direction: column;
-
+    flex-wrap: wrap;
 }
 
 .categoria {
@@ -118,6 +123,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 /* ESTILO DEL GENRES.HTML */
@@ -129,6 +135,7 @@ footer {
     justify-content: space-around;
     align-items: flex-start;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .titulos {
@@ -147,6 +154,7 @@ footer {
     padding: 10px;
     background-color: black;
     margin: 10px;
+    flex-wrap: wrap;
 }
 
 .generoLi {
@@ -183,6 +191,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .info {
@@ -251,6 +260,7 @@ a {
         width: 100%;
         flex-direction: column;
         padding: 0px;
+        flex-wrap: wrap;
     }
 
     .barra a {
@@ -264,12 +274,12 @@ a {
         height: 300px;
         width: 100%;
         flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .barra li {
         margin: 5px 0px;
         font-size: 17px;
-
     }
 
     form {
@@ -277,6 +287,7 @@ a {
         margin-left: 0;
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .populares {
@@ -286,6 +297,7 @@ a {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .categoria {
@@ -333,6 +345,7 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex-wrap: wrap;
     }
     .resultado{
         font-size: 40px;
@@ -353,6 +366,7 @@ a {
         display: flex;
         flex-direction: column;
         margin-top: 30px;
+        flex-wrap: wrap;
     }
 
     .infoDetail p {
