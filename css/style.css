@@ -66,7 +66,6 @@ footer {
 /* ESTILO DEL INDEX.HTML Y FAVORITE.HTML */
 
 .pepopulares {
-    height: 400px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
