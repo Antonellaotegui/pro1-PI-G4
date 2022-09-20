@@ -14,7 +14,7 @@ header {
     background-color: black;
     display: flex;
     justify-content: center;
-    height: 100px;
+    height: 130px;
     width: 100%;
 
 }
@@ -38,17 +38,6 @@ ul {
     align-items: center;
     flex-wrap: wrap;
 }
-
-.barra {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
-
-}
-
 .logo {
     height: 90px;
     border-radius: 100px;
@@ -71,7 +60,7 @@ footer {
     height: 120px;
     width: 100%;
     margin-bottom: 0px;
-    flex-wrap: wrap;
+
 }
 
 /* ESTILO DEL INDEX.HTML Y FAVORITE.HTML */
@@ -191,7 +180,6 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 .info {
