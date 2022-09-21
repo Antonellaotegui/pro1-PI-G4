@@ -65,14 +65,6 @@ footer {
 
 /* ESTILO DEL INDEX.HTML Y FAVORITE.HTML */
 
-.pepopulares {
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
 .cajas {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.521);
