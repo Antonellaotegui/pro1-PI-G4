@@ -28,7 +28,7 @@ fetch(urlPop)
         return error;
     });
 
-    fetch(urlValoradas)
+    fetch(urlSeriesPop)
     .then(function (respuesta) {
         return respuesta.json();
     }).then(function (data) {
@@ -53,7 +53,7 @@ fetch(urlPop)
     });
 
 
-    fetch(urlSeriesPop)
+    fetch(urlValoradas)
     .then(function (respuesta) {
         return respuesta.json();
     }).then(function (data) {
