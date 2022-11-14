@@ -38,7 +38,7 @@ fetch(urlPop)
             listaSeries.innerHTML +=  `<article class="cajas">
                                             <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" 
                                                     <p class="titulo" > ${pelicula.name} </p>
-                                                    <p class="estreno">${pelicula.first_air_date}</p>
+                                                    <p class="estreno">${pelicula.release_date}</p>
                                                     <a class="estreno" href="./detallePeliculas.html?idPelicula=${pelicula.id}">Ver mas</a>
                                     </article>`
         
