@@ -62,6 +62,12 @@ footer {
     margin-bottom: 0px;
 
 }
+.logotmdb {
+    width: 120px;
+    height: 100px;
+    display: flex;
+    margin-left: 45%;
+}
 
 /* ESTILO DEL INDEX.HTML Y FAVORITE.HTML */
 

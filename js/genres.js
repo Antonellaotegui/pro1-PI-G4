@@ -7,9 +7,11 @@ fetch(url)
     return response.json()
 })
 .then(function(data){
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 4; i++){
         let genero = data.name[i];
-            item.innerText = genero;       
+            listaGen.innerHTML += `<article class="generoLi"> 
+            <a class="genNum" href="./detail-genres.html"> ${genero}</a>
+            </article> `
     }
     console.log(data.name)
     return data
