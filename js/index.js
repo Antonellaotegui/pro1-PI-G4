@@ -24,7 +24,7 @@ fetch(urlPop)
         }
         return data;
     }).catch(function (error) {
-        console.log(error);
+        //console.log(error);
         return error;
     });
 
@@ -38,14 +38,14 @@ fetch(urlPop)
             listaSeries.innerHTML +=  `<article class="cajas">
                                             <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" 
                                                     <p class="titulo" > ${pelicula.name} </p>
-                                                    <p class="estreno">${pelicula.release_date}</p>
+                                                    <p class="estreno">${pelicula.first_air_date}</p>
                                                     <a class="estreno" href="./detallePeliculas.html?idPelicula=${pelicula.id}">Ver mas</a>
                                     </article>`
         
         }
         return data;
     }).catch(function (error) {
-        console.log(error);
+       // console.log(error);
         return error;
     });
 
@@ -56,7 +56,7 @@ fetch(urlPop)
     }).then(function (data) {
         for (let i = 0; i < 5; i++) {
             let pelicula = data.results[i];
-            console.log(pelicula.poster_path);
+            //console.log(pelicula.poster_path);
 
             listaValoradas.innerHTML += `<article class="cajas">
                                                 <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" 
@@ -68,6 +68,6 @@ fetch(urlPop)
         }
         return data;
     }).catch(function (error) {
-        console.log(error);
+        //console.log(error);
         return error;
     });
