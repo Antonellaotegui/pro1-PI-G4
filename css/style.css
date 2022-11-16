@@ -107,6 +107,10 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.logomdb {
+    height: 90px;
+    border-radius: 100px;
+}
 
 /* ESTILO DEL GENRES.HTML */
 .generos {
