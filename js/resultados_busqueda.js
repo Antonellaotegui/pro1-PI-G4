@@ -15,8 +15,9 @@ fetch(url)
         const h3 = document.querySelector('resultado');
         h3.innerText += query;
         let info=data.results
+        
         let peliculas=''
-
+crear esta variable
         resultadosJS.innerHTML()
         for (let i = 0; i < data.length; i++) {
             peliculas += `<article>

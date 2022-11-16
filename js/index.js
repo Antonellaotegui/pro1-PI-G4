@@ -33,13 +33,13 @@ fetch(urlPop)
         return respuesta.json();
     }).then(function (data) {
         for (let i = 0; i < 5; i++) {
-            let pelicula = data.results[i];
+            let serie = data.results[i];
             console.log(data.results);
             listaSeries.innerHTML +=  `<article class="cajas">
-                                            <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" 
-                                                    <p class="titulo" > ${pelicula.name} </p>
-                                                    <p class="estreno">${pelicula.first_air_date}</p>
-                                                    <a class="estreno" href="./detallePeliculas.html?idPelicula=${pelicula.id}">Ver mas</a>
+                                            <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${serie.poster_path}" >
+                                                    <p class="titulo" > ${serie.name} </p>
+                                                    <p class="estreno">${serie.first_air_date}</p>
+                                                    <a class="estreno" href="./detallePeliculas.html?idPelicula=${serie.id}">Ver mas</a>
                                     </article>`
         
         }
