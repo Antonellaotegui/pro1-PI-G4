@@ -59,7 +59,7 @@ fetch(urlPop)
             //console.log(pelicula.poster_path);
 
             listaValoradas.innerHTML += `<article class="cajas">
-                                                <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" 
+                                                <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" >
                                                     <p class="titulo"> ${pelicula.title} </p>
                                                     <p class="estreno">${pelicula.release_date}</p>
                                                 <a class="estreno" href="./detallePeliculas.html?idPelicula=${pelicula.id}">Ver mas</a>
