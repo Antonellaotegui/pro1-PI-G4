@@ -19,7 +19,7 @@ fetch(urlPop)
                                             <img class="pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" alt="" ></a>
                                                             <p class="titulo">${pelicula.title}</p>
                                                             <p class="estreno">${pelicula.release_date}</p>
-                                                            <a class="estreno" href="./detail-serie.html?idPelicula=${pelicula.id}">Ver mas</a>
+                                                            <a class="estreno" href="./detail-movie.html?idPelicula=${pelicula.id}">Ver mas</a>
                                         </article > `
         }
         return data;
@@ -40,6 +40,7 @@ fetch(urlPop)
             <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${serie.poster_path}" > </a>
                                                     <p class="titulo" > ${pelicula.name} </p>
                                                     <p class="estreno">${pelicula.first_air_date}</p>
+                                                    
                                                     
                                                     
                                     </article> `

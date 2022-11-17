@@ -8,7 +8,7 @@ let favoritos = JSON.parse(recuperoStorage);
 /*  [2,4,6] */
 
 let section = document.querySelector("#lista");
-let personajesFavoritos = ''; 
+let peliculasFavoritos = ''; 
 
 console.log(favoritos);
 
@@ -25,19 +25,14 @@ if (favoritos == null || favoritos.length == 0) {
             return response.json();
         }).then(function (data) {
             console.log(data);
-            personajesFavoritos += `<article class="cajas">
+            peliculasFavoritos += `<article class="cajas">
                                         <a href="./detail-serie.html">
-                                        <img  class= "pelis" src="${data.image}" alt="">
+                                        <img  class= "pelis" src="${data.image}" alt="'${data.name}'">
                                         </a>
-                                        <p class="titulo"></p>
-                                        <p class="estreno"></p>
-                                    </article>`;
-                                   // `<article>
-                                       // <img src=${data.image} alt='${data.name}' />
-                                        //<p>Name: <a href="./detallePersonaje.html?idPersonaje=${data.id}"> ${data.name}</a> </p>
-                                        //<p>Status: ${data.status} </p>
-                                  //  </article>`
-            section.innerHTML = personajesFavoritos;
+                                        <p class="titulo">Name: <a href="./detallePersonaje.html?idPersonaje=${data.id}"> ${data.name}</a></p>
+                                        <p class="estreno">Status: ${data.status}</p>
+                                    </article>`
+            section.innerHTML = peliculasFavoritos;
 
             return data;
         }).catch(function (error) {
