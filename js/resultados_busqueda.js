@@ -14,17 +14,17 @@ fetch(url)
      let arrayPeliculas = data.results;
 
      //1 Donde: Capturo el elemento html en donde quiero hacer una modificación
-     let seccion = document.querySelector('.container');
+     let seccion = document.querySelector('#container');
      let allPeliculas = [];
 
      console.log(arrayPeliculas);
      //2 Qué: recorro la información de la api y la organizo para mostarla en el html
      for(let i=0; i<arrayPeliculas.length; i++){
          //Dentro del for voy acumulando en la variable una estructura html por cada personaje del array.
-         allPeliculas += `<a href="./detalle.html?buscador=${arrayPeliculas[i].id}"><article>
-                             <img src=${arrayPeliculas[i].image} alt='${arrayPeliculas[i].name}' />
-                             <p>Name: ${arrayPeliculas[i].name} </p>
-                             <p>Status: ${arrayPeliculas[i].status} </p>
+         allPeliculas += `<a href="./detalle.html?buscador=${arrayPeliculas[i].id}"><article class="cajas">
+                             <img class="pelis" src=https://image.tmdb.org/t/p/w500/${arrayPeliculas[i].poster_path} alt='${arrayPeliculas[i].title}' />
+                             <p class="titulo" >${arrayPeliculas[i].title} </p>
+                             <p class="estreno" >${arrayPeliculas[i].release_date} </p>
                          </article></a>`
      }
      //Con toda la estructura html completa ahora la paso al DOM

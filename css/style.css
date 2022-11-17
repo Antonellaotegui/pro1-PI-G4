@@ -140,8 +140,9 @@ footer {
     justify-content: space-around;
     padding: 10px;
     background-color: black;
-    margin: 10px;
+    margin: 30px;
     flex-wrap: wrap;
+    
 }
 
 .generoLi {
@@ -149,6 +150,7 @@ footer {
     font-size: 17px;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+    margin: 25px;
 }
 
 h4 {
@@ -233,6 +235,9 @@ a {
     margin-top: 60px;
     margin-bottom: auto;
     text-align: center;
+}
+#container {
+    margin-top: 50px;
 }
 
 /*MEDIA QUERIES --> PARA CELULAR IPHONE 12 PRO*/

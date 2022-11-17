@@ -11,7 +11,7 @@ fetch(url)
 })
 .then(function(data){
     console.log(data)
-   for(let i = 0; i < 4; i++)
+   for(let i = 0; i < data.genres.length; i++)
     {
         let genero = data.genres[i].name
            listaGen.innerHTML += `<article class="generoLi"> 
@@ -30,7 +30,7 @@ fetch(url)
 })
 .then(function(data){
     console.log(data)
-   for(let i = 0; i < 4; i++)
+   for(let i = 0; i < data.genres.length; i++)
     {
         let genero = data.genres[i].name
            listaGen2.innerHTML += `<article class="generoLi"> 
