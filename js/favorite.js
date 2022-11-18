@@ -1,6 +1,4 @@
 let api_key = '81faef6942a31915ed87b416fbba64ba'
-let url  = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
-/* Recuperar localStorage */
 let recuperoStorage = localStorage.getItem('favoritos');
 /*  ["2"] */
 
@@ -20,20 +18,22 @@ if (favoritos == null || favoritos.length == 0) {
 } else {
     
     for (let i = 0; i < favoritos.length; i++) {
-        let url  = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`;
+let url  = `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=${api_key}&language=en-US&page=1`;/* Recuperar localStorage */
+
         fetch(url)
         .then(function (response) {
             return response.json();
         }).then(function (data) {
             console.log(data);
+            let idF =data.id
             peliculasFavoritos += `<article class="cajas">
                                         <a href="./detail-movies.html">
-                                        <img  class= "pelis" src="${data.poster_path}" alt="'${data.title}'">
+                                        <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="'${data.title}'">
                                         </a>
                                         <p class="titulo"> <a href="./detallePersonaje.html?idPersonaje=${data.id}"> ${data.title}</a></p>
                                         <p class="estreno"> ${data.release_date}</p>
                                     </article>`
-            section.innerHTML = peliculasFavoritos;
+        section.innerHTML = peliculasFavoritos;
 
             return data;
         }).catch(function (error) {
