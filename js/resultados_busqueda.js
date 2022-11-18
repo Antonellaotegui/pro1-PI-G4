@@ -1,8 +1,9 @@
-
 setTimeout(function() {
     alert("Buscando...")
 }, 6000);
-
+function myStopFunction() {
+    clearTimeout(setTimeout);
+  }
 
 
 let queryString = location.search;
