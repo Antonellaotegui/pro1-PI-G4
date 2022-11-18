@@ -44,9 +44,14 @@ fetch(url)
                          </article></a>`
      }
      //Con toda la estructura html completa ahora la paso al DOM
+<<<<<<< HEAD
      seccion.innerHTML = allPeliculas;}
     
     
+=======
+     seccion.innerHTML = allPeliculas;
+     
+>>>>>>> 407a809507a3a5f9b0fc3d3b902fc8d77a71d036
     return data;
 }
 ).catch(function(error) {
