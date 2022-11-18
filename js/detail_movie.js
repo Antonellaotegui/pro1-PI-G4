@@ -34,19 +34,19 @@ if (recuperoStorage != null) {
     favoritos =  JSON.parse(recuperoStorage)
 }
 
-if (favoritos.includes(idpersonaje)) {
+if (favoritos.includes(idPelicula)) {
     fav.innerText = "Quitar de favoritos";
 }
 
 fav.addEventListener("click", function(e) {
     e.preventDefault();
 
-    if (favoritos.includes(idpersonaje)) {
-       let indice = favoritos.indexOf(idpersonaje)
+    if (favoritos.includes(idPelicula)) {
+       let indice = favoritos.indexOf(idPelicula)
        favoritos.splice(indice, 1);
        fav.innerText = "Agregar a Fav";
     }else{
-        favoritos.push(idpersonaje)
+        favoritos.push(idPelicula)
         fav.innerText = "Quitar de favoritos"
     }
 
