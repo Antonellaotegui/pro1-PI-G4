@@ -37,6 +37,7 @@ fetch(url)
      }
      //Con toda la estructura html completa ahora la paso al DOM
      seccion.innerHTML = allPeliculas;
+     
     return data;
 }
 ).catch(function(error) {
