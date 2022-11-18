@@ -5,9 +5,9 @@ let idPelicula = qsObj.get('idPelicula');
 let api_key = '81faef6942a31915ed87b416fbba64ba';
 let urlMovieDet = `https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${api_key}&language=en-US`;
 let descrip = document.querySelector(".descrip");
-let img = document.querySelector(".imgDetailSerie");
+let img = document.querySelector(".imgDetail");
 let titulo = document.querySelector(".tituloDetail");
-let botonFav = document.querySelector(".añadirFav");
+let fav = document.querySelector(".añadirFav");
 let rating= document.querySelector(".rating")
 
 
