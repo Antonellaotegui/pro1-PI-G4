@@ -8,7 +8,9 @@ let descrip = document.querySelector(".descrip");
 let img = document.querySelector(".imgDetail");
 let titulo = document.querySelector(".tituloDetail");
 let fav = document.querySelector(".añadirFav");
-let rating= document.querySelector(".rating")
+let rating= document.querySelector(".rating");
+let estreno = document.querySelector("#estreno")
+let genero = document.querySelector("#genero")
 
 
 fetch(urlMovieDet)
@@ -20,6 +22,8 @@ fetch(urlMovieDet)
     descrip.innerText = data.overview;
     rating.innerText=`rating: ${data.vote_average}`;
     img.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
+    estreno.innerText = data.release_date;
+    genero.innerText = data.genre;
     return data;
 }).catch(function(error) {
     console.log(error);
@@ -53,3 +57,4 @@ fav.addEventListener("click", function(e) {
     let favsToString = JSON.stringify(favoritos);
     localStorage.setItem("favoritos", favsToString)
 })
+
