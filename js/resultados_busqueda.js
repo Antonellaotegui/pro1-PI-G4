@@ -1,3 +1,10 @@
+
+setTimeout(function() {
+    alert("Buscando...")
+}, 6000);
+
+
+
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 const query = queryStringObj.get('buscador');
@@ -35,4 +42,7 @@ fetch(url)
     return error;
 }
 );
+
+
+
 
