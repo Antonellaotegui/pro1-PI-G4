@@ -2,6 +2,7 @@ let api_key = '81faef6942a31915ed87b416fbba64ba'
 
 /* Recuperar localStorage */
 let recuperoStorage = localStorage.getItem('favoritos');
+
 /*  ["2"] */
 
 let favoritos = JSON.parse(recuperoStorage);
@@ -39,7 +40,7 @@ if (favoritos == null || favoritos.length == 0) {
         }).catch(function (error) {
             return error;
         }); 
-        
+    
         let urlSerie  = `https://api.themoviedb.org/3/tv/${favoritos[i]}?api_key=${api_key}&language=en-US`;
             fetch(urlSerie)
             .then(function (response) {
