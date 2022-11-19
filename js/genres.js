@@ -1,5 +1,5 @@
 let api_key= `81faef6942a31915ed87b416fbba64ba`;
-let url =` https://api.themoviedb.org/3/genre/movie/list?api_key=81faef6942a31915ed87b416fbba64ba&language=en-US`;
+let url =` https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=en-US`;
 let listaGen = document.querySelector(".listaGenero");
 let listaGen2 = document.querySelector("#series")
 

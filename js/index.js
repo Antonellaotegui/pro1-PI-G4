@@ -15,12 +15,12 @@ fetch(urlPop)
         for (let i = 0; i < 5; i++) {
 
             let pelicula = data.results[i];
-            listaPopulares.innerHTML += `<article class="cajas">
-                                            <img class="pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" alt="" ></a>
+            listaPopulares.innerHTML += `<a class="estreno" href="./detail-movie.html?idPelicula=${pelicula.id}"><article class="cajas">
+                                            <img class="pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" alt="" >
                                                             <p class="titulo">${pelicula.title}</p>
                                                             <p class="estreno">${pelicula.release_date}</p>
-                                                            <a class="estreno" href="./detail-movie.html?idPelicula=${pelicula.id}">Ver mas</a>
-                                        </article > `
+                                                            
+                                        </article > </a>`
         }
         return data;
     }).catch(function (error) {
@@ -35,16 +35,12 @@ fetch(urlPop)
         for (let i = 0; i < 5; i++) {
             let pelicula = data.results[i];
             console.log(data.results);
-            listaSeries.innerHTML +=  ` <article class="cajas">
-            <a class="enlace" href="./detail-serie.html?idPelicula=${pelicula.id}"> 
-            <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${serie.poster_path}" > </a>
-                                                    <p class="titulo" > ${pelicula.name} </p>
-                                                    <p class="estreno">${pelicula.first_air_date}</p>
-                                                    
-                                                    
-                                                    
-                                    </article> `
-        
+            listaSeries.innerHTML +=  ` <a class="estreno" href="./detail-serie.html?idPelicula=${pelicula.id}"><article class="cajas">
+            <img class="pelis" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" alt="" >
+                            <p class="titulo">${pelicula.name}</p>
+                            <p class="estreno">${pelicula.first_air_date}</p>
+                            
+        </article > </a> `
         }
    
         return data;
