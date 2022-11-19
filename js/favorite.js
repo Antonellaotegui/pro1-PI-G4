@@ -61,7 +61,3 @@ if (favoritos == null || favoritos.length == 0) {
             }); 
             
         }}
-
-
-    
-    
