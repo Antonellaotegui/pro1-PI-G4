@@ -25,30 +25,31 @@ fetch(urlSerieDet)
     return error;
 });
 
-let favoritos=[]
+
+let favoritosSe=[]
 
 let recuperoStorage = localStorage.getItem("favoritos")
 
 if (recuperoStorage != null) {
-    favoritos =  JSON.parse(recuperoStorage)
+    favoritosSe =  JSON.parse(recuperoStorage)
 }
 
-if (favoritos.includes(idPelicula)) {
+if (favoritosSe.includes(idPelicula)) {
     fav.innerText = "Quitar de favoritos";
 }
 
 fav.addEventListener("click", function(e) {
     e.preventDefault();
 
-    if (favoritos.includes(idPelicula)) {
+    if (favoritosSe.includes(idPelicula)) {
        let indice = favoritos.indexOf(idPelicula)
-       favoritos.splice(indice, 1);
+       favoritosSe.splice(indice, 1);
        fav.innerText = "Agregar a Fav";
     }else{
-        favoritos.push(idPelicula)
+        favoritosSe.push(idPelicula)
         fav.innerText = "Quitar de favoritos"
     }
 
-    let favsToString = JSON.stringify(favoritos);
-    localStorage.setItem("favoritos", favsToString)
+    let favsToString = JSON.stringify(favoritosSe);
+    localStorage.setItem("favoritosSe", favsToString)
 })

@@ -1,9 +1,9 @@
-setTimeout(function() {
-    alert("Buscando...")
-}, 6000);
-function myStopFunction() {
-    clearTimeout(setTimeout);
-  }
+// setTimeout(function() {
+//     alert("Buscando...")
+// }, 6000);
+// function myStopFunction() {
+//     clearTimeout(setTimeout);
+//   }
 
 
 let queryString = location.search;
@@ -45,7 +45,7 @@ fetch(url)
      }
      //Con toda la estructura html completa ahora la paso al DOM
 <<<<<<< HEAD
-     seccion.innerHTML = allPeliculas;}
+     seccion.innerHTML = allPeliculas;
     
     
 =======
