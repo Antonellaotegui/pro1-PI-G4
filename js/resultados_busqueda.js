@@ -1,8 +1,20 @@
-let qs = location.search;
-let qsObj = new URLSearchParams(qs);
-let personaje = qsObj.get('busqueda');
+// setTimeout(function() {
+//     alert("Buscando...")
+// }, 6000);
+// function myStopFunction() {
+//     clearTimeout(setTimeout);
+//   }
 
-let url = `https://rickandmortyapi.com/api/character/?name=${personaje}`;
+
+let queryString = location.search;
+let queryStringObj = new URLSearchParams(queryString);
+const query = queryStringObj.get('buscador');
+let api_key = '81faef6942a31915ed87b416fbba64ba';
+
+const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${api_key}&language=en-US&page=1&include_adult=false`
+
+//let loquebusco= document.querySelector('.loquebusco');
+  //loquebusco.innerText= query;
 
 fetch(url)
 .then(function(response) {
@@ -19,17 +31,24 @@ fetch(url)
 
      console.log(arrayDePersonajes);
      //2 Qué: recorro la información de la api y la organizo para mostarla en el html
-     for(let i=0; i<arrayDePersonajes.length; i++){
-         //Dentro del for voy acumulando en la variable una estructura html por cada personaje del array.
-         allCharacters += `<a href="./detalle.html?buscador=${arrayDePersonajes[i].id}"><article>
-                             <img src=${arrayDePersonajes[i].image} alt='${arrayDePersonajes[i].name}' />
-                             <p>Name: ${arrayDePersonajes[i].name} </p>
-                             <p>Status: ${arrayDePersonajes[i].status} </p>
+     if (allPeliculas == null || allPeliculas.length == 0) {
+        /* Muestres no hay resultados */
+        seccion.innerHTML = '<p>No hay resultado de busqueda</p>'}
+    else { 
+        for(let i=0; i<arrayPeliculas.length; i++){
+         //Dentro del for voy acumulando en la variable una estructura html por cada pelicula del array.
+         allPeliculas += `<a href="./detalle.html?buscador=${arrayPeliculas[i].id}"><article class="cajas">
+                             <img class="pelis" src=https://image.tmdb.org/t/p/w500/${arrayPeliculas[i].poster_path} alt='${arrayPeliculas[i].title}' />
+                             <p class="titulo" >${arrayPeliculas[i].title} </p>
+                             <p class="estreno" >${arrayPeliculas[i].release_date} </p>
                          </article></a>`
+        
      }
+        
+    }
      //Con toda la estructura html completa ahora la paso al DOM
-     seccion.innerHTML = allCharacters;
-    return data;
+     seccion.innerHTML = allPeliculas;
+        return data;
 }
 ).catch(function(error) {
     return error;
