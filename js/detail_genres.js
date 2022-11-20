@@ -17,7 +17,7 @@ fetch(url)
      let genero = document.querySelector('#generospeliculas')
 
 // se recorre la info de la API y se selecciona para mostrarla al usuario
-    for(let 1=0; i<4; i++){
+    for(let i=0; i<4; i++){
         urlDetalleGen += `<article class= "gen">
         <p class= "resultadoGen" ${arrayGeneros[i].poster_path} alt = <a href="./detail-genres.html?id=${arrayGeneros[i].id}" class= "detailLink"> </article>`
     }
