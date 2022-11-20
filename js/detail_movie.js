@@ -12,6 +12,7 @@ let rating= document.querySelector(".rating");
 let estreno = document.querySelector("#estreno")
 let genero = document.querySelector("#genero")
 let lGen = ``;
+let duracion=document.querySelector(".duracion")
 
 fetch(urlMovieDet)
 .then(function(response) {
@@ -21,6 +22,7 @@ fetch(urlMovieDet)
     titulo.innerText = data.title;
     descrip.innerText = data.overview;
     rating.innerText=`Rating: ${data.vote_average}`;
+    duracion.innerText= `Duración: ${data.runtime}`;
     img.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
     estreno.innerText = data.release_date;
     for(let i=0; i<data.genres.length; i++){
