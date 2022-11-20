@@ -19,7 +19,7 @@ fetch(urlDetalleGen)
     for(let i=0; i<4; i++){
         DetalleGen += `
         <article class="cajas">
-                <a href="./detail-movie.html"><img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${arrayGeneros[i].poster_path}" alt=""></a>
+                <a href="./detail-movie.html?idPelicula=${arrayGeneros[i].id}"><img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${arrayGeneros[i].poster_path}" alt=""></a>
                 <p class="titulo">${arrayGeneros[i].title}</p>
             </article>
         <p class= "resultadoGen" ${arrayGeneros[i].poster_path} alt = <a href="./detail-genres.html?id=${arrayGeneros[i].id}" class= "detailLink"> </article>`
@@ -45,7 +45,7 @@ fetch(urlDetalleGenSerie)
     for(let i=0; i<4; i++){
         DetalleGen += `
         <article class="cajas">
-                <a href="./detail-movie.html"><img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${arrayGeneros[i].poster_path}" alt=""></a>
+                <a href="./detail-serie.html?idPelicula=${arrayGeneros[i].id}"><img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${arrayGeneros[i].poster_path}" alt=""></a>
                 <p class="titulo">${arrayGeneros[i].name}</p>
             </article>
         <p class= "resultadoGen" ${arrayGeneros[i].poster_path} alt = <a href="./detail-genres.html?id=${arrayGeneros[i].id}" class= "detailLink"> </article>`

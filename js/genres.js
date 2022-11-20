@@ -36,7 +36,7 @@ fetch(urlSeries)
     {
         let genero = data.genres[i].name
            listaGen2.innerHTML += `<article class="generoLi"> 
-           <a class="genNum" href="./detail-genres.html">${genero}</a>
+           <a class="genNum" href="./detail-genres.html?id=${data.genres[i].id}">${genero}</a>
            </article> `}
     console.log(data)
     return data
