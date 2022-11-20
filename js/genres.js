@@ -25,7 +25,8 @@ fetch(url)
     return error
 })
 
-fetch(url)
+let urlSeries= `https://api.themoviedb.org/3/discover/tv?api_key=81faef6942a31915ed87b416fbba64ba&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`
+fetch(urlSeries)
 .then(function(response){
     return response.json()
 })
