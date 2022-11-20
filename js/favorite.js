@@ -44,7 +44,7 @@ if (favoritos == null || favoritos.length == 0) {
             }).then(function (data) {
                 console.log(data);
                 seriesFavoritos += `<article class="cajas">
-                     <a href="./detail-movies.html">
+                     <a href="./detail-movie.html?idPelicula=${pelicula.id}"">
                      <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="'${data.name}'">
                      </a>
                      <p class="titulo"> <a href="./detail-movie.html?idPelicula=${data.id}"> ${data.name}</a></p>
