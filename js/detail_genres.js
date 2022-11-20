@@ -4,27 +4,55 @@ let qs = location.search;
 let objQs = new URLSearchParams(qs);
 let idGen = objQs.get("id");
 let nombreGen = objQs.get("name");
-let tituloGen = document.querySelector('tituloGen')
+let genPelis = document.querySelector('#peliculas')
 
-fetch(url)
+fetch(urlDetalleGen)
 .then(function(response) {
     return response.json();
 }
 ).then(function(data) {
     let arrayGeneros = data.results
      console.log(arrayGeneros);
-     let detalleGen= ''
-     let genero = document.querySelector('#generospeliculas')
+     let DetalleGen= ''
 
 // se recorre la info de la API y se selecciona para mostrarla al usuario
     for(let i=0; i<4; i++){
-        urlDetalleGen += `<article class= "gen">
+        DetalleGen += `
+        <article class="cajas">
+                <a href="./detail-movie.html"><img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${arrayGeneros[i].poster_path}" alt=""></a>
+                <p class="titulo">${arrayGeneros[i].title}</p>
+            </article>
         <p class= "resultadoGen" ${arrayGeneros[i].poster_path} alt = <a href="./detail-genres.html?id=${arrayGeneros[i].id}" class= "detailLink"> </article>`
     }
-    genero.innerHTML = urlDetalleGen;
+    genPelis.innerHTML = DetalleGen;
 }).catch(function (error) {
     console.log('el error es' + error)
 })
 
+//ahora en series
+let urlDetalleGenSerie= `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&language=en-US`
+let genSeries = document.querySelector("#series")
+fetch(urlDetalleGenSerie)
+.then(function(response) {
+    return response.json();
+}
+).then(function(data) {
+    let arrayGeneros = data.results
+     console.log(arrayGeneros);
+     let DetalleGen= ''
+
+// se recorre la info de la API y se selecciona para mostrarla al usuario
+    for(let i=0; i<4; i++){
+        DetalleGen += `
+        <article class="cajas">
+                <a href="./detail-movie.html"><img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${arrayGeneros[i].poster_path}" alt=""></a>
+                <p class="titulo">${arrayGeneros[i].name}</p>
+            </article>
+        <p class= "resultadoGen" ${arrayGeneros[i].poster_path} alt = <a href="./detail-genres.html?id=${arrayGeneros[i].id}" class= "detailLink"> </article>`
+    }
+    genSeries.innerHTML = DetalleGen;
+}).catch(function (error) {
+    console.log('el error es' + error)
+})
 
 

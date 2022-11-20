@@ -12,7 +12,7 @@ let favoritosSerie = JSON.parse(recuperoStorageFav);
 
 if (favoritos == null || favoritos.length == 0) {
     /* Muestres no hay favoritos */
-    section.innerHTML = '<p>No hay peliculas en favoritos</p>'
+    section.innerHTML = '<p>No hay peliculas o series en favoritos</p>'
 } else {
 
     for (let i = 0; i < favoritos.length; i++) {
