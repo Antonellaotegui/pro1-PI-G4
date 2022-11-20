@@ -11,7 +11,7 @@ let fav = document.querySelector(".añadirFav");
 let rating= document.querySelector(".rating");
 let estreno = document.querySelector("#estreno")
 let genero = document.querySelector("#genero")
-
+let lGen = ``;
 
 fetch(urlMovieDet)
 .then(function(response) {
@@ -20,10 +20,13 @@ fetch(urlMovieDet)
     console.log(data);
     titulo.innerText = data.title;
     descrip.innerText = data.overview;
-    rating.innerText=`rating: ${data.vote_average}`;
+    rating.innerText=`Rating: ${data.vote_average}`;
     img.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
     estreno.innerText = data.release_date;
-    genero.innerText = data.genre;
+    for(let i=0; i<data.genres.length; i++){
+     lGen += ` <a href="./detail-genres.html?id=${data.genres[i].id}">${data.genres[i].name}, </a> `;
+    }
+    genero.innerHTML = `Géneros: \n ${lGen}`;
     return data;
 }).catch(function(error) {
     console.log(error);
