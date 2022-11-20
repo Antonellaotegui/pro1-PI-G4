@@ -36,13 +36,6 @@ if (favoritos == null || favoritos.length == 0) {
                 return error;
             });
     }
-
-}
-
-if (favoritosSerie == null || favoritosSerie.length == 0) {
-    /* Muestres no hay favoritos */
-    section.innerHTML = '<p>No hay series en favoritos</p>'
-} else {
     for (let i = 0; i < favoritosSerie.length; i++) {
         let urlSerie = `https://api.themoviedb.org/3/tv/${favoritosSerie[i]}?api_key=${api_key}&language=en-US`;
         fetch(urlSerie)

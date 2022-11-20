@@ -8,13 +8,10 @@
 
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
-const query = queryStringObj.get('buscador');
+let query = queryStringObj.get("buscador");
 let api_key = '81faef6942a31915ed87b416fbba64ba';
 
-const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${api_key}&language=en-US&page=1&include_adult=false`
-
-//let loquebusco= document.querySelector('.loquebusco');
-  //loquebusco.innerText= query;
+let url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${api_key}&language=en-US`
 
 fetch(url)
 .then(function(response) {
@@ -23,31 +20,73 @@ fetch(url)
 ).then(function(data) {
      //Acá ya tenemmos los datos finales y es donde debemos escribir nuestro código.
      console.log(data);
-     let arrayDePersonajes = data.results;
+     let arrayDePeliculas = data.results;
 
      //1 Donde: Capturo el elemento html en donde quiero hacer una modificación
-     let seccion = document.querySelector('.container');
-     let allCharacters = [];
+     let sectionP = document.querySelector('#secciones');
+     let allPeliculas = [];
 
-     console.log(arrayDePersonajes);
+     console.log(arrayDePeliculas);
      //2 Qué: recorro la información de la api y la organizo para mostarla en el html
-     if (allPeliculas == null || allPeliculas.length == 0) {
-        /* Muestres no hay resultados */
-        seccion.innerHTML = '<p>No hay resultado de busqueda</p>'}
+     if (arrayDePeliculas == null || arrayDePeliculas.length == 0) {
+       /* Muestres no hay resultados */
+       sectionP.innerHTML = '<p>No hay resultado de busqueda</p>'}
     else { 
-        for(let i=0; i<arrayPeliculas.length; i++){
+        for(let i=0; i<arrayDePeliculas.length; i++){
          //Dentro del for voy acumulando en la variable una estructura html por cada pelicula del array.
-         allPeliculas += `<a href="./detalle.html?buscador=${arrayPeliculas[i].id}"><article class="cajas">
-                             <img class="pelis" src=https://image.tmdb.org/t/p/w500/${arrayPeliculas[i].poster_path} alt='${arrayPeliculas[i].title}' />
-                             <p class="titulo" >${arrayPeliculas[i].title} </p>
-                             <p class="estreno" >${arrayPeliculas[i].release_date} </p>
+         allPeliculas += `<a href="./detalle.html?buscador=${arrayDePeliculas[i].id}"><article class="cajas">
+                             <img class="pelis" src=https://image.tmdb.org/t/p/w500/${arrayDePeliculas[i].poster_path} alt='${arrayDePeliculas[i].title}' />
+                             <p class="titulo" >${arrayDePeliculas[i].title} </p>
+                             <p class="estreno" >${arrayDePeliculas[i].release_date} </p>
                          </article></a>`
+               
         
      }
-        
+     sectionP.innerHTML = allPeliculas;
     }
      //Con toda la estructura html completa ahora la paso al DOM
-     seccion.innerHTML = allPeliculas;
+     
+        return data;
+}
+).catch(function(error) {
+    return error;
+}
+);
+
+//lo mismo para series
+let urlSerie = `https://api.themoviedb.org/3/search/tv?query=${query}&api_key=${api_key}&language=en-US`
+fetch(urlSerie)
+.then(function(response) {
+    return response.json();
+}
+).then(function(data) {
+     //Acá ya tenemmos los datos finales y es donde debemos escribir nuestro código.
+     console.log(data);
+     let arrayDeSeries = data.results;
+
+     //1 Donde: Capturo el elemento html en donde quiero hacer una modificación
+     let sectionS = document.querySelector('#seccionesSerie');
+     let allSeries = [];
+
+     console.log(arrayDeSeries);
+     //2 Qué: recorro la información de la api y la organizo para mostarla en el html
+     if (arrayDeSeries == null || arrayDeSeries.length == 0) {
+       /* Muestres no hay resultados */
+       sectionS.innerHTML = '<p>No hay resultado de busqueda</p>'}
+    else { 
+        for(let i=0; i<arrayDeSeries.length; i++){
+         //Dentro del for voy acumulando en la variable una estructura html por cada pelicula del array.
+         allSeries += `<a href="./detalle.html?buscador=${arrayDeSeries[i].id}"><article class="cajas">
+                             <img class="pelis" src=https://image.tmdb.org/t/p/w500/${arrayDeSeries[i].poster_path} alt='${arrayDeSeries[i].name}' />
+                             <p class="titulo" >${arrayDeSeries[i].name} </p>
+                             <p class="estreno" >${arrayDeSeries[i].firts_air_date} </p>
+                         </article></a>`
+               
+        
+     }
+     sectionS.innerHTML = allSeries;
+    }
+     
         return data;
 }
 ).catch(function(error) {
