@@ -63,3 +63,18 @@ fav.addEventListener("click", function(e) {
     localStorage.setItem("favoritos", favsToString)
 })
 
+// donde se puede ver
+// let api_keyplat= `81faef6942a31915ed87b416fbba64ba`
+// let urlplat=`https://api.themoviedb.org/3/watch/providers/movie?api_key=${api_keyplat}&language=en-US`;
+
+// fetch(urlplat)
+// .then(function(response) {
+//     return response.json();
+// }).then(function(data) {
+//     console.log(data);
+//     let logos=
+//     return data;
+// }).catch(function(error) {
+//     console.log(error);
+//     return error;
+// });
