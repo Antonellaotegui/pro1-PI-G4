@@ -40,19 +40,20 @@ fetch (urlRecomendations).then (function(response) {
     return response.json()
 }).then (function(data) {
     let arrayRecomendaciones = data.results
-    console.log(data.results)
+    console.log(data.results);
     let getRecom = document.querySelector('#getRecom')
     let recomendadas = ''
     for(let i=0; i<3; i++){
         recomendadas += `<article class= "recMovieSerie">
-        <p class= "nameMovieSerie"> ${arrayRecomendaciones[i].title} </p>
-        <img src= > /* Completar el src de la img */
-        <a href="./detail-movie.html?id=${arrayRecomendaciones[i].id} class = "detalle""> Ver el detalle</a>
-        </article>
-        ` 
+                            <p class= "nameMovieSerie"> ${arrayRecomendaciones[i].title} </p>;
+                             <img src= `//image.tmdb.org/t/p/w500/${data.poster_path}` >;
+                            <a href = `./detail-movie.html?id=${arrayRecomendaciones[i].id} class = 'detalle'> </a>;
+                        </article>` 
     }
-    
-})
+        
+        
+        getRecom.innerHTML = recomendadas
+    })
 
 /* Array donde se agregan los favoritos */
 let favoritos=[]
