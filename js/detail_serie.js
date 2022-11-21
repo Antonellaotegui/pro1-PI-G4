@@ -1,16 +1,16 @@
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);
-let idPelicula = qsObj.get('idPelicula');
+let idTv = qsObj.get('idPelicula');
 
 let api_key = '81faef6942a31915ed87b416fbba64ba';
-let urlSerieDet = `https://api.themoviedb.org/3/tv/${idPelicula}?api_key=${api_key}&language=en-US`;
+let urlSerieDet = `https://api.themoviedb.org/3/tv/${idTv}?api_key=${api_key}&language=en-US`;
 let descrip = document.querySelector(".descrip");
 let img = document.querySelector(".imgDetailserie");
 let rating = document.querySelector(".rating")                              
 let titulo = document.querySelector(".tituloDetail");
 let fav = document.querySelector(".añadirFav");
 let lGen = ``;
-let urlRecomendationsSerie= `https://api.themoviedb.org/3/tv/${idPelicula}/recommendations?api_key=${api_key}&language=en-US`
+let urlRecomendationsSerie= `https://api.themoviedb.org/3/tv/${idTv}/recommendations?api_key=${api_key}&language=en-US`
 let botonrec = document.querySelector(".botonrec");
 
 fetch(urlSerieDet)
@@ -25,7 +25,7 @@ fetch(urlSerieDet)
     for(let i=0; i<data.genres.length; i++){
         lGen += ` <a href="./detail-genres.html?id=${data.genres[i].id}">${data.genres[i].name}, </a> `;
     }
-    //genero.innerText = `Géneros: \n ${lGen}`;
+    
     genero.innerHTML = ` Géneros: \n ${lGen}`
     return data;
 }).catch(function(error) {
@@ -33,33 +33,34 @@ fetch(urlSerieDet)
     return error;
 });
 
-
-let favoritosSe=[]
-
-let recuperoStorage = localStorage.getItem("favoritos")
+/* Array donde se agregan los favoritos */
+let favoritosSerie = []
+/* recupero el storage */
+let recuperoStorage = localStorage.getItem("favoritosSerie")
 
 if (recuperoStorage != null) {
-    favoritosSe =  JSON.parse(recuperoStorage)
+    favoritosSerie = JSON.parse(recuperoStorage)
 }
-
-if (favoritosSe.includes(idPelicula)) {
+/* Ver si el ID exsiste en favoritos */
+if (favoritosSerie.includes(idTv)) {
     fav.innerText = "Quitar de favoritos";
 }
-
-fav.addEventListener("click", function(e) {
+/* Agregarle una accion al boton de agregar a favoritos */
+fav.addEventListener("click", function (e) {
     e.preventDefault();
-
-    if (favoritosSe.includes(idPelicula)) {
-       let indice = favoritos.indexOf(idPelicula)
-       favoritosSe.splice(indice, 1);
-       fav.innerText = "Agregar a Fav";
-    }else{
-        favoritosSe.push(idPelicula)
+    /* En caso de que incluya el ID, elimina el array y el boton tiene que contener "Agregar a favoritos" */
+    if (favoritosSerie.includes(idTv)) {
+        let indice = favoritosSerie.indexOf(idTv)
+        favoritosSerie.splice(indice, 1);
+        fav.innerText = "Agregar a Fav";
+    } /* Si no lo incluye, agregar el array y el boton pasa a contener "Quitar de favoritos" */
+    else {
+        favoritosSerie.push(idTv)
         fav.innerText = "Quitar de favoritos"
     }
 
-    let favsToString = JSON.stringify(favoritosSe);
-    localStorage.setItem("favoritosSe", favsToString)
+    let favsToString = JSON.stringify(favoritosSerie);
+    localStorage.setItem("favoritosSerie", favsToString)
 })
 
 //para recomendaciones
