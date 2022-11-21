@@ -11,7 +11,7 @@ let titulo = document.querySelector(".tituloDetail");
 let fav = document.querySelector(".añadirFav");
 let lGen = ``;
 let urlRecomendationsSerie= `https://api.themoviedb.org/3/tv/${idPelicula}/recommendations?api_key=${api_key}&language=en-US`
-let botonReco = document.querySelector(".recomendaciones");
+let botonrec = document.querySelector(".botonrec");
 
 fetch(urlSerieDet)
 .then(function(response) {
@@ -72,13 +72,33 @@ fetch (urlRecomendationsSerie)
      let getRecom = document.querySelector("#getRecom")
      let recomendadas = ''
     for(let i=0; i<3; i++){
-       recomendadas += `<article class= "cajas" id= "recom">
-                             <p class= "titulo"> ${arrayRecomendaciones[i].name} </p>;
-                              <img class="pelis" src= "https://image.tmdb.org/t/p/w500/${arrayRecomendaciones[i].poster_path}" >;
-                            <a href = "./detail-movie.html?id=${arrayRecomendaciones[i].id}" class = "detalle"> </a>;
-                        </article> `
+       recomendadas += `<a class="estreno" href="./detail-serie.html?idPelicula=${arrayRecomendaciones[i].id}"><article class= "cajas" id= "recom">
+                             <p class= "titulo"> ${arrayRecomendaciones[i].name} </p>
+                              <img class="pelis" src= "https://image.tmdb.org/t/p/w500/${arrayRecomendaciones[i].poster_path}" >
+                        </article> </a> `
     }
         
         
          getRecom.innerHTML = recomendadas
      })
+
+let activo = true;
+if (activo) {
+    botonrec.innerText = "Ver recomendadas";
+    getRecom.style.display="none";
+}
+
+botonrec.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (activo) {
+            botonrec.innerText = "Ver recomendadas";
+            getRecom.style.display="none";
+            activo = false;
+        }
+        else{
+            botonrec.innerText = "Ocultar recomendadas";
+            getRecom.style.display = "flex";
+            activo = true;
+        }
+    
+})

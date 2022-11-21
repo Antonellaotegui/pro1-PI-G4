@@ -16,10 +16,7 @@ let duracion = document.querySelector(".duracion")
 let lGen = '';
 let urlRecomendations = `https://api.themoviedb.org/3/movie/${idPelicula}/recommendations?api_key=${api_key}&language=en-US`
 let botonrec = document.querySelector(".botonrec");
-let activo = false;
-
-
-
+let activo = true;
 
 fetch(urlMovieDet)
     .then(function (response) {
@@ -45,15 +42,7 @@ fetch(urlMovieDet)
     });
 
 //para el boton de recomendaciones
-
-botonrec.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (activo) {
-        getRecom.style.display="none"
-        activo = false
-    }
-    else {
-        fetch(urlRecomendations)
+fetch(urlRecomendations)
             .then(function (response) {
                 return response.json()
             }).then(function (data) {
@@ -62,19 +51,35 @@ botonrec.addEventListener("click", function (e) {
                 let getRecom = document.querySelector("#getRecom")
                 let recomendadas = ''
                 for (let i = 0; i < 3; i++) {
-                    recomendadas += `<a class="estreno" href="./detail-movie.html?idPelicula=${pelicula.id}"><article class= "cajas" id= "recom">
-                             <p class= "titulo"> ${arrayRecomendaciones[i].name} </p>;
-                              <img class="pelis" src= "https://image.tmdb.org/t/p/w500/${arrayRecomendaciones[i].poster_path}" >;
-                            <a href = "./detail-movie.html?id=${arrayRecomendaciones[i].id}" class = "detalle"> </a>;
+                    recomendadas += `<a class="estreno" href="./detail-movie.html?idPelicula=${arrayRecomendaciones[i].id}"><article class= "cajas" id= "recom">
+                             <p class= "titulo"> ${arrayRecomendaciones[i].title} </p>
+                              <img class="pelis" src= "https://image.tmdb.org/t/p/w500/${arrayRecomendaciones[i].poster_path}" >
+                            <a href = "./detail-movie.html?id=${arrayRecomendaciones[i].id}" class = "detalle"> </a>
                         </article></a>`
                 }
-
-
                 getRecom.innerHTML = recomendadas
-                activo=true;
+                
             })
+
+if (activo) {
+        botonrec.innerText = "Ver recomendadas";
+        getRecom.style.display="none";
     }
-})
+ 
+botonrec.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (activo) {
+                botonrec.innerText = "Ver recomendadas";
+                getRecom.style.display="none";
+                activo = false;
+            }
+            else{
+                botonrec.innerText = "Ocultar recomendadas";
+                getRecom.style.display = "flex";
+                activo = true;
+            }
+        
+    })
 
 
 
