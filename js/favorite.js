@@ -12,7 +12,7 @@ let favoritosSerie = JSON.parse(recuperoStorageFav);
 
 if (favoritos == null || favoritos.length == 0) {
     /* Muestres no hay favoritos */
-    section.innerHTML = '<p>No hay peliculas en favoritos</p>'
+    section.innerHTML = '<p>No hay peliculas o series en favoritos</p>'
 } else {
 
     for (let i = 0; i < favoritos.length; i++) {
@@ -44,7 +44,7 @@ if (favoritos == null || favoritos.length == 0) {
             }).then(function (data) {
                 console.log(data);
                 seriesFavoritos += `<article class="cajas">
-                     <a href="./detail-movies.html">
+                     <a href="./detail-movie.html?idPelicula=${pelicula.id}"">
                      <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="'${data.name}'">
                      </a>
                      <p class="titulo"> <a href="./detail-movie.html?idPelicula=${data.id}"> ${data.name}</a></p>

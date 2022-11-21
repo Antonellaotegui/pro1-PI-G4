@@ -13,7 +13,7 @@ let rating= document.querySelector(".rating");
 let estreno = document.querySelector("#estreno")
 let genero = document.querySelector("#genero")
 
-// Agarro los datos de la pelicula para el DOM
+
 fetch(urlMovieDet)
 .then(function(response) {
     return response.json();
@@ -23,10 +23,14 @@ fetch(urlMovieDet)
     // Seleccion de elemento a modificar
     titulo.innerText = data.title;
     descrip.innerText = data.overview;
-    rating.innerText=`rating: ${data.vote_average}`;
+    rating.innerText=`Rating: ${data.vote_average}`;
+    duracion.innerText= `Duración: ${data.runtime}`;
     img.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
     estreno.innerText = data.release_date;
-    genero.innerText = data.genre;
+    for(let i=0; i<data.genres.length; i++){
+     lGen += ` <a href="./detail-genres.html?id=${data.genres[i].id}">${data.genres[i].name}, </a> `;
+    }
+    genero.innerHTML = `Géneros: \n ${lGen}`;
     return data;
 }).catch(function(error) {
     console.log(error);
@@ -80,3 +84,18 @@ fav.addEventListener("click", function(e) {
     localStorage.setItem("favoritos", favsToString)
 })
 
+// donde se puede ver
+// let api_keyplat= `81faef6942a31915ed87b416fbba64ba`
+// let urlplat=`https://api.themoviedb.org/3/watch/providers/movie?api_key=${api_keyplat}&language=en-US`;
+
+// fetch(urlplat)
+// .then(function(response) {
+//     return response.json();
+// }).then(function(data) {
+//     console.log(data);
+//     let logos=
+//     return data;
+// }).catch(function(error) {
+//     console.log(error);
+//     return error;
+// });

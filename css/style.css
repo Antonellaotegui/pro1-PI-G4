@@ -215,15 +215,20 @@ a {
 }
 
 .rating {
-    margin-left: 168px;
+    margin-left: 90px;
     width: 50%;
 }
 
 .añadirFav {
-    margin-left: 140px;
+    margin-left: 82px;
     margin-top: 50px;
     width: 60%;
     border-radius: 14px;
+}
+
+.duracion{
+    margin-left: 90px;
+    width: 50%;
 }
 
 
