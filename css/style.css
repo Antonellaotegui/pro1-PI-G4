@@ -77,7 +77,9 @@ footer {
     width: 200px;
     border-radius: 10px;
     flex-wrap: wrap;
+   
 }
+
 
 .categoria {
     font-family: 'Montserrat', sans-serif;
@@ -85,7 +87,12 @@ footer {
     font-size: 30px;
     margin: 27px;
 }
-
+.pelisRec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .pelis {
     height: 270px;
     width: 100%;
@@ -166,6 +173,7 @@ h4 {
     margin-left: 20px;
 
 }
+
 a {
     color: white;
     text-decoration: none;

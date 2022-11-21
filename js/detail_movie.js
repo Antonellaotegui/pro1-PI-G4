@@ -10,8 +10,14 @@ let img = document.querySelector(".imgDetail");
 let titulo = document.querySelector(".tituloDetail");
 let fav = document.querySelector(".añadirFav");
 let rating= document.querySelector(".rating");
-let estreno = document.querySelector("#estreno")
-let genero = document.querySelector("#genero")
+let estreno = document.querySelector("#estreno");
+let genero = document.querySelector("#genero");
+let duracion = document.querySelector(".duracion")
+let lGen = '';
+let urlRecomendations= `https://api.themoviedb.org/3/movie/${idPelicula}/recommendations?api_key=${api_key}&language=en-US`
+let botonReco = document.querySelector(".recomendaciones");
+
+
 
 
 fetch(urlMovieDet)
@@ -36,24 +42,30 @@ fetch(urlMovieDet)
     console.log(error);
     return error;
 });
-fetch (urlRecomendations).then (function(response) {
-    return response.json()
-}).then (function(data) {
-    let arrayRecomendaciones = data.results
-    console.log(data.results);
-    let getRecom = document.querySelector('#getRecom')
-    let recomendadas = ''
+
+//para el boton de recomendaciones
+ fetch (urlRecomendations)
+ .then (function(response) {
+     return response.json()
+ }).then (function(data) {
+     let arrayRecomendaciones = data.results
+     console.log(data.results);
+     let getRecom = document.querySelector("#getRecom")
+     let recomendadas = ''
     for(let i=0; i<3; i++){
-        recomendadas += `<article class= "recMovieSerie">
-                            <p class= "nameMovieSerie"> ${arrayRecomendaciones[i].title} </p>;
-                             <img src= `//image.tmdb.org/t/p/w500/${data.poster_path}` >;
-                            <a href = `./detail-movie.html?id=${arrayRecomendaciones[i].id} class = 'detalle'> </a>;
-                        </article>` 
+       recomendadas += `<article class= "cajas" id= "recom">
+                             <p class= "titulo"> ${arrayRecomendaciones[i].title} </p>;
+                              <img class="pelis" src= "https://image.tmdb.org/t/p/w500/${arrayRecomendaciones[i].poster_path}" >;
+                            <a href = "./detail-movie.html?id=${arrayRecomendaciones[i].id}" class = "detalle"> </a>;
+                        </article> `
     }
         
         
-        getRecom.innerHTML = recomendadas
-    })
+         getRecom.innerHTML = recomendadas
+     })
+
+
+
 
 /* Array donde se agregan los favoritos */
 let favoritos=[]

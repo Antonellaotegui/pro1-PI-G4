@@ -10,6 +10,8 @@ let rating = document.querySelector(".rating")
 let titulo = document.querySelector(".tituloDetail");
 let fav = document.querySelector(".añadirFav");
 let lGen = ``;
+let urlRecomendationsSerie= `https://api.themoviedb.org/3/tv/${idPelicula}/recommendations?api_key=${api_key}&language=en-US`
+let botonReco = document.querySelector(".recomendaciones");
 
 fetch(urlSerieDet)
 .then(function(response) {
@@ -59,3 +61,24 @@ fav.addEventListener("click", function(e) {
     let favsToString = JSON.stringify(favoritosSe);
     localStorage.setItem("favoritosSe", favsToString)
 })
+
+//para recomendaciones
+fetch (urlRecomendationsSerie)
+ .then (function(response) {
+     return response.json()
+ }).then (function(data) {
+     let arrayRecomendaciones = data.results
+     console.log(data.results);
+     let getRecom = document.querySelector("#getRecom")
+     let recomendadas = ''
+    for(let i=0; i<3; i++){
+       recomendadas += `<article class= "cajas" id= "recom">
+                             <p class= "titulo"> ${arrayRecomendaciones[i].name} </p>;
+                              <img class="pelis" src= "https://image.tmdb.org/t/p/w500/${arrayRecomendaciones[i].poster_path}" >;
+                            <a href = "./detail-movie.html?id=${arrayRecomendaciones[i].id}" class = "detalle"> </a>;
+                        </article> `
+    }
+        
+        
+         getRecom.innerHTML = recomendadas
+     })
