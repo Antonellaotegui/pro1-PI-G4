@@ -54,7 +54,7 @@ fav.addEventListener("click", function (e) {
     if (favoritosSerie.includes(idTv)) {
         let indice = favoritosSerie.indexOf(idTv);
         favoritosSerie.splice(indice, 1);
-        fav.innerText = "Agregar a Fav";
+        fav.innerText = "Añadir a Favoritos";
     } /* Si no lo incluye, agregar el array y el boton pasa a contener "Quitar de favoritos" */
     else {
         favoritosSerie.push(idTv);
