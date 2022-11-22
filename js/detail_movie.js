@@ -35,6 +35,32 @@ fetch(urlMovieDet)
             lGen += ` <a href="./detail-genres.html?id=${data.genres[i].id}">${data.genres[i].name}, </a> `;
         }
         genero.innerHTML = `Géneros: \n ${lGen}`;
+        //plataformas 
+        let urlPlat = `https://api.themoviedb.org/3/movie/${idPelicula}/watch/providers?api_key=${api_key}`
+        fetch(urlPlat)
+        .then(function(response) {
+            return response.json();
+        }
+        ).then(function(data) {
+            let informacion = data.results;
+            console.log(informacion)
+            let secPlat = document.querySelector(".plataformas")
+            if (informacion.US !== undefined){
+                iconos = `${informacion.US.flatrate[0].provider_name}`
+                secPlat.innerHTML = iconos;
+            }
+            else if (informacion.US !== undefined){
+                nombre = `${informacion.US.buy[0].provider_name}`
+                secPlat.innerHTML= nombre;
+            }
+            else{
+                secPlat.innerText="Este titulo no está disponible en los Estados Unidos"
+            }
+                return data;
+        }
+        ).catch(function(error) {
+            return error;
+        })
         return data;
     }).catch(function (error) {
         console.log(error);
