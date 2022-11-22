@@ -81,19 +81,38 @@ botonrec.addEventListener("click", function (e) {
         
     })
 
+//para los trailers
+let urlTraillers = `https://api.themoviedb.org/3/movie/${idPelicula}/videos?api_key=81faef6942a31915ed87b416fbba64ba&language=en-US`;
+let seccionT = document.querySelector("#trailer")
+fetch(urlTraillers)
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                let videos = data.results
+                if (videos == null | videos.length == 0){
+                    seccionT.innerText = "No hay trailers disponibles"
+                }
+                else{
+                console.log(data.results);
+                let videoT = ''
+                for (let i = 0; i < 1; i++) {
+                if (videos[i].type == "Trailer"){
+                    seccionT.innerHTML += `<a href="https://www.youtube.com/watch?v=${videos[i].key}"> Ver trailer </a>`
+                }}
+              }
+                
+            })
+
+    //para agregar a favoritos
 /* Array donde se agregan los favoritos */
 let favoritos=[]
-
 let recuperoStorage = localStorage.getItem("favoritos")
-
 if (recuperoStorage != null) {
     favoritos =  JSON.parse(recuperoStorage)
 }
-
 if (favoritos.includes(idPelicula)) {
     fav.innerText = "Quitar de favoritos";
 }
-
 fav.addEventListener("click", function(e) {
     e.preventDefault();
 

@@ -33,6 +33,8 @@ fetch(urlSerieDet)
     return error;
 });
 
+
+
 /* Array donde se agregan los favoritos */
 let favoritosSerie = []
 /* recupero el storage */
@@ -103,3 +105,29 @@ botonrec.addEventListener("click", function (e) {
         }
     
 })
+
+
+//para el trailer
+let urlTraillersTV = `https://api.themoviedb.org/3/tv/${idTv}/videos?api_key=81faef6942a31915ed87b416fbba64ba&language=en-US`;
+let seccionT = document.querySelector("#trailer")
+fetch(urlTraillersTV)
+   .then(function (response) {
+            return response.json()
+    }).then(function (data) {
+                    let videos = data.results
+                    if (videos == null | videos.length == 0){
+                        seccionT.innerText = "No hay trailers disponibles"
+                    }
+                    else{
+                    console.log(data.results);
+                    for (let i = 0; i < 1; i++) {
+                    if (videos[i].type == "Trailer"){
+                        seccionT.innerHTML += `<a href="https://www.youtube.com/watch?v=${videos[i].key}"> Ver trailer </a>`
+                    }}
+                  }
+                    
+     }) . catch(function(error){
+                    return error
+                })
+        
+                

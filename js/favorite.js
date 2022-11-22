@@ -1,4 +1,4 @@
-let api_key = '81faef6942a31915ed87b416fbba64ba';
+let api_key =`81faef6942a31915ed87b416fbba64ba`;
 let recuperoStorage = localStorage.getItem('favoritos');
 let favoritos = JSON.parse(recuperoStorage);
 let section = document.querySelector("#lista");
