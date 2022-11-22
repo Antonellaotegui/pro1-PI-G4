@@ -50,17 +50,17 @@ fav.addEventListener("click", function (e) {
     e.preventDefault();
     /* En caso de que incluya el ID, elimina el array y el boton tiene que contener "Agregar a favoritos" */
     if (favoritosSerie.includes(idTv)) {
-        let indice = favoritosSerie.indexOf(idTv)
+        let indice = favoritosSerie.indexOf(idTv);
         favoritosSerie.splice(indice, 1);
         fav.innerText = "Agregar a Fav";
     } /* Si no lo incluye, agregar el array y el boton pasa a contener "Quitar de favoritos" */
     else {
-        favoritosSerie.push(idTv)
-        fav.innerText = "Quitar de favoritos"
+        favoritosSerie.push(idTv);
+        fav.innerText = "Quitar de favoritos";
     }
 
     let favsToString = JSON.stringify(favoritosSerie);
-    localStorage.setItem("favoritosSerie", favsToString)
+    localStorage.setItem("favoritosSerie", favsToString);
 })
 
 //para recomendaciones

@@ -15,48 +15,50 @@ if (favoritos == null || favoritos.length == 0) {
     /* Muestres no hay favoritos */
     section.innerHTML = '<p>No hay peliculas o series en favoritos</p>'
 } else {
-
-    for (let i = 0; i < favoritos.length; i++) {
-        let url = `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=${api_key}&language=en-US`;
+    if (favoritos == null || favoritos.length == 0) {
+        /* Muestres no hay favoritos */
+        section.innerHTML = '<p>No hay personajes en favoritos</p>'
+    } else {
         
-        fetch(url)
+        for (let i = 0; i < favoritos.length; i++) {
+            let url =   `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=${api_key}&language=en-US`;
+            fetch(url)
             .then(function (response) {
                 return response.json();
             }).then(function (data) {
                 console.log(data);
                 peliculasFavoritos += `<a href="./detail-movie.html?idPelicula=${data.id}"><article class="cajas">
-                                        <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title}">
-                                        
-                                        <p class="titulo">  ${data.title}</p>
-                                        <p class="estreno"> ${data.release_date}</p>
-                                    </article> </a>`
+                <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title}">
+                <p class="titulo">  ${data.title}</p>
+                <p class="estreno"> ${data.release_date}</p>
+            </article> </a>`
                 section.innerHTML = peliculasFavoritos;
-
+    
                 return data;
             }).catch(function (error) {
                 return error;
             });
     }
-   }
+   }}
 
 if (favoritosSerie == null || favoritosSerie.length == 0) {
-    /* Muestres no hay favoritos */
+     /* Muestres no hay favoritos */
     sectionSeries.innerHTML = '<p>No hay peliculas o series en favoritos</p>'
 } else {
-   for (let i = 0; i < favoritosSerie.length; i++) {
+    for (let i = 0; i < favoritosSerie.length; i++) {
     let urlSerie = `https://api.themoviedb.org/3/tv/${favoritosSerie[i]}?api_key=${api_key}&language=en-US`;
-    fetch(urlSerie)
+     fetch(urlSerie)
         .then(function (response) {
-            return response.json();
+             return response.json();
         }).then(function (data) {
             console.log(data);
             seriesFavoritos += ` <a href="./detail-serie.html?idPelicula=${data.id}"><article class="cajas">
                  <img  class= "pelis" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}">
-                 <p class="titulo">  ${data.name}</p>
+                  <p class="titulo">  ${data.name}</p>
                  <p class="estreno"> ${data.first_air_date}</p>
              </article> </a>`
             sectionSeries.innerHTML = seriesFavoritos;
             return data;
         }).catch(function (error) {
             return error;
-        })}}
+       })}}

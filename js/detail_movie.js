@@ -81,10 +81,6 @@ botonrec.addEventListener("click", function (e) {
         
     })
 
-
-
-
-
 /* Array donde se agregan los favoritos */
 let favoritos = []
 /* recupero el storage */
