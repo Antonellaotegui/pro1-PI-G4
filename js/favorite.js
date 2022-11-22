@@ -21,7 +21,7 @@ if (favoritos == null || favoritos.length == 0) {
     } else {
         
         for (let i = 0; i < favoritos.length; i++) {
-            let url =   `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=${api_key}&language=en-US`;
+            let url =   `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=400f43d154bc968e0f7c02f3b9187c48`;
             fetch(url)
             .then(function (response) {
                 return response.json();
@@ -46,7 +46,8 @@ if (favoritosSerie == null || favoritosSerie.length == 0) {
     sectionSeries.innerHTML = '<p>No hay peliculas o series en favoritos</p>'
 } else {
     for (let i = 0; i < favoritosSerie.length; i++) {
-    let urlSerie = `https://api.themoviedb.org/3/tv/${favoritosSerie[i]}?api_key=${api_key}&language=en-US`;
+    let urlSerie = `https://api.themoviedb.org/3/tv/${favoritosSerie[i]}?api_key=400f43d154bc968e0f7c02f3b9187c48` 
+    
      fetch(urlSerie)
         .then(function (response) {
              return response.json();

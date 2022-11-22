@@ -82,33 +82,32 @@ botonrec.addEventListener("click", function (e) {
     })
 
 /* Array donde se agregan los favoritos */
-let favoritos = []
-/* recupero el storage */
+let favoritos=[]
+
 let recuperoStorage = localStorage.getItem("favoritos")
 
 if (recuperoStorage != null) {
-    favoritos = JSON.parse(recuperoStorage)
+    favoritos =  JSON.parse(recuperoStorage)
 }
-/* Ver si el ID exsiste en favoritos */
+
 if (favoritos.includes(idPelicula)) {
     fav.innerText = "Quitar de favoritos";
 }
-/* Agregarle una accion al boton de agregar a favoritos */
-fav.addEventListener("click", function (e) {
+
+fav.addEventListener("click", function(e) {
     e.preventDefault();
-    /* En caso de que incluya el ID, elimina el array y el boton tiene que contener "Agregar a favoritos" */
+
     if (favoritos.includes(idPelicula)) {
-        let indice = favoritos.indexOf(idPelicula)
-        favoritos.splice(indice, 1);
-        fav.innerText = "Agregar a Fav";
-    } /* Si no lo incluye, agregar el array y el boton pasa a contener "Quitar de favoritos" */
-    else {
+       let indice = favoritos.indexOf(idPelicula)
+       favoritos.splice(indice, 1);
+       fav.innerText = "Agregar a Fav";
+    }else{
         favoritos.push(idPelicula)
         fav.innerText = "Quitar de favoritos"
     }
 
     let favsToString = JSON.stringify(favoritos);
-    localStorage.setItem("favoritos", favsToString)
+    localStorage.setItem("favoritos", favsToString )
 })
 
 // donde se puede ver
