@@ -1,9 +1,4 @@
-setTimeout(function() {
-     alert("Buscando...")
- }, 1000);
-  function myStopFunction() {
-     clearTimeout(setTimeout);
-   }
+
 
 
 let queryString = location.search;
@@ -96,3 +91,7 @@ fetch(urlSerie)
     return error;
 }
 );
+window.addEventListener('load', function (e) {
+    this.document.querySelector('#loader').classList.toggle('loader2')
+   
+})

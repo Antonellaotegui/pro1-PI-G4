@@ -13,5 +13,6 @@ form.addEventListener('submit', function(e) {
 })
 
 window.addEventListener('load', function (e) {
-    this.document.querySelector('#loader').classList.toggle('loader2')
+    this.document.getElementById("loader").classList.toggle("loader2")
+   
 })
