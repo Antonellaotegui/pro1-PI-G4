@@ -12,7 +12,7 @@ form.addEventListener('submit', function(e) {
     }
 })
 
-window.addEventListener('load', function (e) {
+/* window.addEventListener('load', function (e) {
     this.document.getElementById("loader").classList.toggle("loader2")
    
-})
+}) */

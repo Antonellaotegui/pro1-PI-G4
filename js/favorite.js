@@ -5,7 +5,7 @@ let section = document.querySelector("#lista");
 let peliculasFavoritos = '';
 //para series 
 let sectionSeries = document.querySelector("#listaSerie");
-let recuperoStorageFav = localStorage.getItem('favoritosSe');
+let recuperoStorageFav = localStorage.getItem('favoritosSerie');
 let seriesFavoritos = '';
 let favoritosSerie = JSON.parse(recuperoStorageFav);
 
@@ -15,10 +15,7 @@ if (favoritos == null || favoritos.length == 0) {
     /* Muestres no hay favoritos */
     section.innerHTML = '<p>No hay peliculas o series en favoritos</p>'
 } else {
-    if (favoritos == null || favoritos.length == 0) {
-        /* Muestres no hay favoritos */
-        section.innerHTML = '<p>No hay personajes en favoritos</p>'
-    } else {
+    
         
         for (let i = 0; i < favoritos.length; i++) {
             let url =   `https://api.themoviedb.org/3/movie/${favoritos[i]}?api_key=400f43d154bc968e0f7c02f3b9187c48`;
@@ -38,7 +35,7 @@ if (favoritos == null || favoritos.length == 0) {
             }).catch(function (error) {
                 return error;
             });
-    }
+
    }}
 
 if (favoritosSerie == null || favoritosSerie.length == 0) {
