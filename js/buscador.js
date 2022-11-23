@@ -11,3 +11,7 @@ form.addEventListener('submit', function(e) {
         form.submit();
     }
 })
+
+window.addEventListener('load', function (e) {
+    this.document.querySelector('#loader').classList.toggle('loader2')
+})
